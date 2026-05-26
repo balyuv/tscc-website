@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="relative z-10 text-center max-w-5xl mx-auto px-6 pt-24">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-400 text-sm font-medium mb-8">
           <span className="w-2 h-2 bg-sky-400 rounded-full animate-pulse" />
-          Third Sight Consulting Corporation · Montgomery, NJ
+          Third Sight Consulting Corporation · New York, NY
         </div>
 
         <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 tracking-tight">
