@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Left diamond -->
+  <polygon points="2,24 17,8 32,24 17,40" fill="#1a6fd4"/>
+  <!-- Right diamond -->
+  <polygon points="16,24 31,8 46,24 31,40" fill="#3ab0e8" opacity="0.9"/>
+  <!-- Intersection -->
+  <polygon points="16,24 24,16 32,24 24,32" fill="#2dd4bf"/>
+</svg>

@@ -5,8 +5,11 @@ import "./globals.css";
 const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Third Sight Consulting | TSCC | Data Engineering & Cloud Analytics",
-  description: "TSCC — Third Sight Consulting. Expert data engineering, cloud infrastructure, and analytics consulting based in New York, NY.",
+  title: "TSCC — Third Sight Consulting Corp.",
+  description: "Third Sight Consulting — Data engineering, AI solutions, and cloud infrastructure built for real business impact.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
