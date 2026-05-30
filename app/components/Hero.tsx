@@ -16,7 +16,7 @@ export default function Hero() {
         style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
       />
 
-      <div className="relative z-10 text-center max-w-5xl mx-auto px-6 pt-12">
+      <div className="relative z-10 text-center max-w-5xl mx-auto px-6 pt-32 md:pt-12">
         <h1 className="text-6xl md:text-8xl font-bold leading-[1.05] tracking-tight mb-8 gradient-text">
           Data &amp; AI that<br />
           drives decisions.
