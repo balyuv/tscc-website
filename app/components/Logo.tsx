@@ -1,28 +1,49 @@
-export default function Logo({ size = 36 }: { size?: number }) {
+"use client";
+
+// CANONICAL LOGO — diamond dimensions and arrangement are FIXED and must never change.
+// Only font sizes differ between variants. SVG viewBox is always "0 0 48 22".
+// Left diamond:    1,11 16,1  31,11 16,21  — fill #1a6fd4
+// Right diamond:  16,11 31,1  46,11 31,21  — fill #3ab0e8
+// Intersection:   16,11 23.5,6 31,11 23.5,16 — fill #2dd4bf
+
+const variants = {
+  lg: { svgW: 52, svgH: 22, mb: -12, pr: 12, wordmark: "text-4xl", subtitle: 11 },
+  sm: { svgW: 38, svgH: 16, mb: -8,  pr: 8,  wordmark: "text-2xl", subtitle: 8 },
+};
+
+export default function Logo({
+  variant = "lg",
+  animate = false,
+}: {
+  variant?: "lg" | "sm";
+  animate?: boolean;
+}) {
+  const v = variants[variant];
+
   return (
-    <svg width={size} height={size} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#38bdf8" />
-          <stop offset="0.5" stopColor="#818cf8" />
-          <stop offset="1" stopColor="#c084fc" />
-        </linearGradient>
-      </defs>
-      {/* Hexagon */}
-      <path d="M20 2L36 11V29L20 38L4 29V11L20 2Z" stroke="url(#logoGrad)" strokeWidth="1.5" fill="none" />
-      {/* Rays */}
-      <line x1="20" y1="12" x2="20" y2="15" stroke="url(#logoGrad)" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-      <line x1="20" y1="25" x2="20" y2="28" stroke="url(#logoGrad)" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-      <line x1="12" y1="20" x2="15" y2="20" stroke="url(#logoGrad)" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-      <line x1="25" y1="20" x2="28" y2="20" stroke="url(#logoGrad)" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-      <line x1="14.2" y1="14.2" x2="16.3" y2="16.3" stroke="url(#logoGrad)" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-      <line x1="23.7" y1="23.7" x2="25.8" y2="25.8" stroke="url(#logoGrad)" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-      <line x1="25.8" y1="14.2" x2="23.7" y2="16.3" stroke="url(#logoGrad)" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-      <line x1="16.3" y1="23.7" x2="14.2" y2="25.8" stroke="url(#logoGrad)" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-      {/* Eye */}
-      <ellipse cx="20" cy="20" rx="5" ry="3.5" stroke="url(#logoGrad)" strokeWidth="1.2" fill="none" />
-      {/* Pupil */}
-      <circle cx="20" cy="20" r="1.8" fill="url(#logoGrad)" />
-    </svg>
+    <span className="inline-flex flex-col items-center">
+      <span
+        className={`flex justify-center w-full ${animate ? "logo-diamonds" : ""}`}
+        style={{ marginBottom: v.mb, paddingRight: v.pr }}
+      >
+        <svg width={v.svgW} height={v.svgH} viewBox="0 0 48 22" fill="none">
+          <polygon points="1,11 16,1 31,11 16,21"       fill="#1a6fd4" />
+          <polygon points="16,11 31,1 46,11 31,21"      fill="#3ab0e8" opacity="0.9" />
+          <polygon points="16,11 23.5,6 31,11 23.5,16"  fill="#2dd4bf" />
+        </svg>
+      </span>
+      <span
+        className={`${v.wordmark} font-bold tracking-[0.12em] leading-none ${animate ? "logo-wordmark" : ""}`}
+      >
+        <span className="text-[#2997ff]">ts</span>
+        <span className="text-[#5ac8fa]">cc</span>
+      </span>
+      <span
+        className={`tracking-[0.18em] mt-0.5 font-medium ${animate ? "logo-subtitle" : ""}`}
+        style={{ fontSize: v.subtitle, color: "#2dd4bf" }}
+      >
+        Third Sight Consulting Corp.
+      </span>
+    </span>
   );
 }

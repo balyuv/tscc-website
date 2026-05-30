@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
+  --background: #1e2a4a;
   --foreground: #f5f5f7;
 }
 
@@ -16,18 +16,71 @@ html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background: rgba(41, 151, 255, 0.2);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
 .gradient-text {
-  background: linear-gradient(135deg, #2997ff, #5ac8fa);
+  background: linear-gradient(135deg, #1a6fd4 0%, #3ab0e8 55%, #2dd4bf 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+@keyframes logo-diamonds {
+  from { opacity: 0; transform: scale(0.6) translateY(4px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes logo-wordmark {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes logo-subtitle {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.logo-diamonds {
+  animation: logo-diamonds 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.logo-wordmark {
+  animation: logo-wordmark 0.4s ease both;
+  animation-delay: 0.25s;
+}
+.logo-subtitle {
+  animation: logo-subtitle 0.4s ease both;
+  animation-delay: 0.5s;
+}
+
 .card-hover {
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card-hover:hover {
-  background: #1d1d1f !important;
-  border-color: rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-2px);
+  background: #161616 !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.card-hover-light {
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover-light:hover {
+  transform: translateY(-2px);
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }

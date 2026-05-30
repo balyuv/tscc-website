@@ -17,12 +17,8 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/80 backdrop-blur-xl border-b border-white/10" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5">
-          <Logo size={32} />
-          <div className="flex flex-col leading-none">
-            <span className="text-white text-sm font-bold tracking-wide">TSCC</span>
-            <span className="text-[#6e6e73] text-[9px] font-medium tracking-widest uppercase">Third Sight</span>
-          </div>
+        <a href="#">
+          <Logo variant="lg" animate />
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
@@ -35,7 +31,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a href="#contact" className="hidden md:inline-flex items-center px-5 py-2 rounded-full bg-[#2997ff] hover:bg-[#0077ed] text-white text-sm font-semibold transition-colors">
+        <a href="#contact" className="hidden md:inline-flex items-center px-5 py-2 rounded-full text-white text-sm font-semibold transition-opacity hover:opacity-80" style={{background: 'linear-gradient(135deg, #1a6fd4 0%, #3ab0e8 55%, #2dd4bf 100%)'}}>
           Get in Touch
         </a>
 
@@ -53,7 +49,8 @@ export default function Navbar() {
               {l}
             </a>
           ))}
-          <a href="#contact" className="inline-flex items-center px-5 py-2 rounded-full bg-[#2997ff] text-white text-sm font-semibold w-fit">
+          <a href="#contact" className="inline-flex items-center px-5 py-2 rounded-full text-white text-sm font-semibold w-fit" style={{background: 'linear-gradient(135deg, #1a6fd4 0%, #3ab0e8 55%, #2dd4bf 100%)'}}>
+
             Get in Touch
           </a>
         </div>
